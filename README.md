@@ -73,7 +73,7 @@ Compared to other blog system on the internet, there is no advertisement and oth
 ### 1. Clone Repo
 
 ```bash
-$ git clone git@github.com:tavik000/.....git
+$ git clone git@github.com:tavik000/AngularFireBlog.git
 ```
 
 ### 2. Download NodeJS
