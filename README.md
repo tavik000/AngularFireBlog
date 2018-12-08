@@ -262,6 +262,7 @@ It should be noted that we have deployed our blog system to cloud hosting thanks
 
 
 <br>
+
 #### Angular6 + Firebase
 We use Angular6 + Firebase in this project. There are many components in the website, for example, app component, login component, editor component and other components. Different components contain three main files: HTML, CSS and ts.
 In HTML, we write the HTML code of the website. In CSS, we write the CSS code. And in ts, we write the data manipulation code here. 
