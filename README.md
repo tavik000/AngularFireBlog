@@ -166,7 +166,7 @@ This website contains a CSS animation. After scrolling down, it will display the
 
 
 
-###Blog body
+### Blog body
 
 The blog system contains different modules and functionalities:
 
