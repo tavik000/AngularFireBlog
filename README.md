@@ -30,6 +30,9 @@
 
 ## Introduction
 
+<b>Notice: This is my personal blog, do not copy and use for your blog. This repos is for study sharing only</b>
+
+
 Our project is a Personal Blog System. Blog’s admin can log in the system and can add/delete/edit the articles. Other users can browse the articles. 
 
 The main purpose of our project is to design and implement a personal blog system. Although there are many useful blog systems on the internet, they have less custom design and settings and not all of them support markdown editing. What’s more, we implement our blog system using AngularFire framework that the system are more comprehensive. As a result, we can manage our own data in the cloud database. Every user keeps their accounts only. It protect the privacy compare to the existing blog system on the internet. In addition, we can design our blog style and layout whatever we like.
