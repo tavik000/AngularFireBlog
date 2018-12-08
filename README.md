@@ -128,7 +128,8 @@ $ firebase deploy
 ```
 
 
-## System Scrucutre
+## System Structure
+
 ### Use Case <br>
 There is some diagrams for the system structure. 
 
