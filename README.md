@@ -30,7 +30,12 @@
 
 ## Introduction
 
-<b>Notice: This is my personal blog, do not copy and use for your blog. This repos is for study sharing only</b>
+**Important Notice**: This is my personal blog, do not copy and use for your blog. This repos is for study sharing only.
+
+-----
+<br>
+<br>
+<br>
 
 
 Our project is a Personal Blog System. Blog’s admin can log in the system and can add/delete/edit the articles. Other users can browse the articles. 
@@ -62,7 +67,7 @@ Compared to other blog system on the internet, there is no advertisement and oth
 - [Firebase Cli Document](https://github.com/firebase/firebase-tools)
 - [Angular Document](https://angular.io/guide/quickstart)
 
-### Learning AngularFire with Video
+#### Learning AngularFire with Video
 - [Angular + Typescript = Powerful Web App](https://www.youtube.com/watch?v=0akfix87OdE&t=715s)
 - [Angular Cli Tutorial for Beginner](https://www.youtube.com/watch?v=k5E2AVpwsko)
 - [Learn Angular 6 in 60 minutes](https://www.youtube.com/watch?v=z4JUm0Bq9AM&t=97s)
