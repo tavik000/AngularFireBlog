@@ -1,21 +1,387 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
+<!DOCTYPE html>
+<html ng-app="blogApp">
+<head>
+  <title>Key Blog</title>
+  <!-- <link rel="stylesheet" href="./stylesheets/bootstrap.css"> -->
+  <!-- <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="./stylesheets/blogStyle.css"> -->
+  <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/110131/responsive.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+<!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+	
+	<!-- Fuentes de Google -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+	<!-- Iconos -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+    <div #waddleDee id="waddleDee" class="waddle-dee">
+      <div class="parasol">
+        <div class="parasol-top">
+          <div class="parasol-top-material"></div>
+          <div class="parasol-top-footer">
+            <div class="parasol-top-footer-left"></div>
+            <div class="parasol-top-footer-center"></div>
+            <div class="parasol-top-footer-right"></div>
+          </div>
+        </div>
+        <div class="parasol-stick"></div>
+      </div>
+      <div class="waddle-arm waddle-arm-left"></div>
+      <div class="waddle-arm waddle-arm-right"></div>
+      <div class="waddle-body">
+        <div class="waddle-face">
+          <div class="waddle-blush waddle-blush-left"></div>
+          <div class="waddle-blush waddle-blush-right"></div>
+          <div class="waddle-eye waddle-eye-left"></div>
+          <div class="waddle-eye waddle-eye-right"></div>
+        </div>
+      </div>
+      <div class="waddle-foot waddle-foot-left"></div>
+      <div class="waddle-foot waddle-foot-right"></div>
+    </div>
+
+    <div class="cloud cloud-large cloud-1"></div>
+    <div class="cloud cloud-medium cloud-2">
+      <div class="waddle-dee-the-second">
+        <div class="sign">
+          scroll
+        </div>
+        <div class="waddle-arm waddle-arm-left"></div>
+        <div class="waddle-arm waddle-arm-right"></div>
+        <div class="waddle-body">
+          <div class="waddle-face">
+            <div class="waddle-blush waddle-blush-left"></div>
+            <div class="waddle-blush waddle-blush-right"></div>
+            <div class="waddle-eye waddle-eye-left"></div>
+            <div class="waddle-eye waddle-eye-right"></div>
+          </div>
+        </div>
+        <div class="waddle-foot waddle-foot-left"></div>
+        <div class="waddle-foot waddle-foot-right"></div>
+      </div>
+    </div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-medium cloud-4"></div>
+    <div class="cloud cloud-large cloud-5"></div>
+    <div class="cloud cloud-medium cloud-6"></div>
+    <div class="cloud cloud-7"></div>
+    <div class="cloud cloud-large cloud-8"></div>
+    <div class="cloud cloud-9"></div>
+
+    <div class="star-block star-block-1"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-2"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-3"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-4"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-5"><div class="star-block-star"></div></div>
+
+    <div #ground id="ground" class="ground">
+      <div class="ground-grass">
+        <div class="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-s-4">
+                <h1 class="push-left">Key Blog</h1>
+                
+              </div>
+              <div class="clearfix"></div>
+              <div class="offset-s-2 col-s-6">
+                <nav role='navigation' class="push-right">
+                    
+                      <app-login [isAdmin]=IsAdmin (isAdminChanged)="isAdminChangedHandler($event)" [user]=User (userChanged)="userChangedHandler($event)"></app-login>
+                    <!-- <li><a href="#" ng-click="blog.selectTab('blog')">See All Posts</a></li> //
+                    <li><a href="#" ng-click="blog.selectTab('new')">Add New Post</a></li> -->
+                </nav> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          
+          
+          
+           
+        </div>
+
+
+
+      </div>
+      <!-- close grass -->
+      <!-- nav bar -->
+      <br>
+      <br>
+      <br>
+      <div class="container">
+        <div class="col-md-12 navBar">
+
+
+                  <div class="dropdown">
+                    <button class="dropbtn navBtn pink" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat(null)">All</button>
+                  </div>
+
+                  <div class="dropdown">
+                    <button class="dropbtn navBtn pink">Study</button>
+                    <div class="dropdown-content">
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('web')">Web</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('game')">Game</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('mobile')">Mobile</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('ai')">AI</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('english')">English</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('japanese')">Japanese</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown">
+                    <button class="dropbtn navBtn pink" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('travel')">Travel</button>
+                  </div>
+
+                  <div class="dropdown">
+                    <button class="dropbtn navBtn pink">Hobby</button>
+                    <div class="dropdown-content">
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('guitar')">Guitar</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('skating')">Skating</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('movie')">Movie</a>
+                      <a href="javascript:void(0)" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('food')">Food</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropbtn navBtn pink" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="filterByCat('daily')">Daily</button>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropbtn navBtn pink" onclick="location.href='http://www2.comp.polyu.edu.hk/~18087348g/'">Home Page</button>
+                  </div>
+
+                  <!-- <div *ngIf="userEmail == 'yanicech@gmail.com'"> -->
+                    <button *ngIf="IsAdmin" class="dropbtn navBtn green push-right pushNavRight" (click)="onShowFieldState('addPost')">Add post</button>
+                  <!-- </div> -->
+          </div>
+        </div>
+          <div>
+                    
+              <div ng-controller="BlogController as blog">
+                  
+                 
+                  <br><br>
+                  
+                  <div class="content">
+                    <div class="container">
+
+                        <!-- Add Post  -->
+                        <div class="post" *ngIf="showFieldState == 'addPost'">
+                            <h1 class="addEditPost">Add New Post</h1>
+                            <h4 class="addEditHeader addEditPostTitle">Title</h4>
+                            <input type="text" [(ngModel)]="newPostTitle" placeholder="title"/>
+                            <h4 class="addEditHeader">Category</h4>
+                            <input type="text" [(ngModel)]="newPostCat" placeholder="category"/>
+                            <h4 class="addEditHeader">Body</h4>
+                            <!-- <markdown> -->
+                              <div id="md" appEditorMd [editormdConfig]="conf" (onEditorChange)="syncModel($event)">
+                                <textarea style="display: block;" [(ngModel)]="markdown"></textarea>
+                              </div>
+                              <hr>
+                              <!-- <ngx-md>
+                                {{ markdown }}
+                              </ngx-md> -->
+
+                              <!-- <h2>Markdown内容:</h2>
+                              <span>{{markdown}}</span> -->
+                          <!-- </markdown> -->
+                            <!-- <textarea placeholder="mainbody" rows="10"></textarea> -->
+                            <h4 class="addEditHeader">Featured Image URL</h4>
+                            <input type="text" placeholder="http://placekitten.com/g/2000/600" [(ngModel)]="newPostPic" />
+                            <h4 class="addEditHeader">by:</h4>
+                            <input type="text" [(ngModel)]="newPostAuth" placeholder="Author Name" required/>
+                            
+                            <!-- <input type="submit" value="Submit" (click)="addNewPost()"/> -->
+                            <button class="dropbtn addPostGreen addEditCanBtn" type="submit" (click)="addNewPost()">Add Post</button>
+                            <button class="dropbtn red addEditCanBtn" type="submit" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)">Cancel</button>
+                        </div>  
+                        <!-- /Add Post -->
+                      
+                      <!-- Edit Post  -->
+                      <div class="post" *ngIf="showFieldState == 'editPost' " >
+                          <h1 class="addEditPost">Edit Post</h1>
+                          <h4 class="addEditHeader addEditPostTitle">Title</h4>
+                          <input type="text" [(ngModel)]="editPostTitle">
+                          <h4 class="addEditHeader">Category</h4>
+                          <input type="text" [(ngModel)]="editPostCat" placeholder="">
+                          <h4 class="addEditHeader">Body</h4>
+                          <!-- <markdown> -->
+                            <div id="md" appEditorMd [editormdConfig]="conf" (onEditorChange)="syncModel($event)">
+                              <textarea style="display: block;" [(ngModel)]="markdown"></textarea>
+                            </div>
+                            <hr>
+                            <!-- <ngx-md>
+                              {{ markdown }}
+                            </ngx-md> -->
+
+                            <!-- <h2>Markdown内容:</h2>
+                            <span>{{markdown}}</span> -->
+                        <!-- </markdown> -->
+                          <!-- <textarea placeholder="mainbody" rows="10"></textarea> -->
+                          <h4 class="addEditHeader">Featured Image URL</h4>
+                          <input type="text" placeholder="http://placekitten.com/g/2000/600" [(ngModel)]="editPostPic" />
+                          <h4 class="addEditHeader">by:</h4>
+                          <input type="text" [(ngModel)]="editPostAuth" placeholder="Author Name" required/>
+                          
+                          <!-- <input type="submit" value="Submit" (click)="addNewPost()"/> -->
+                          <button class="dropbtn blue addEditCanBtn" type="submit" (click)="editPost()">Update Post</button>
+                          <button class="dropbtn red addEditCanBtn" type="submit" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)">Cancel</button>
+                      </div>  
+                      <!-- /Edit Post -->  
+
+                      
+
+                      <!-- Thumbnail -->
+                      <div *ngIf="selectedPost.title == 'blog' && showFieldState !=='editPost'">
+                        <div *ngIf="showFieldState !== 'addPost' ">
+                            <div class="row" *ngIf="(posts | async); let posts; else loading; ">
+                                <ul class="post-grid col-md-12 img-thumb"  *ngFor="let post of posts; let i = index" 
+                                (mouseenter) ="togglePostIn(i) "  (mouseleave) ="togglePostOut(i)"
+                                [attr.data-index]="i">
+                                        <div class="img-caption" [@popOverState]="states[i]">
+                                            <a href="javascript:void(0)" class="edit" (click)="sendDefaultValue(post)" (click)="onSelect(post)" (click)="onShowFieldState('editPost')"><i class="fas fa-pen fa-2x"></i></a>
+                                            <a href="javascript:void(0)" class="delete" (click)="onShowFieldState('deletePost')" (click)="onSelect(post)" (click)="deletePost()"><i class="fas fa-trash-alt fa-2x"></i></a>
+                                        </div>
+                                        <li *ngIf="states[i] !== 'show'"  (click)="onSelect(post)">
+                                            <h3>{{post.title}}</h3>
+                                            <cite>{{post.createDate | date}} {{post.category | uppercase}}</cite>
+                                            <!-- <ngx-md class="thumbnail-md"> -->
+                                            <p>
+                                              {{post.body | slice:0:70 }}...
+                                            </p>
+                                            <!-- </ngx-md> -->
+                                            <p class="fa fa-comment push-left"> {{post.commentCount}}
+                                            </p>
+                                            <p class="fa fa-heart push-right"> {{post.likes}}
+                                            </p>
+                                        </li>
+                              </ul>
+                                <div *ngIf="posts.length === 0" class="notice">No results</div>
+                            </div>
+                              <ng-template #loading>Loading&hellip;</ng-template>
+                        </div>
+                    </div>
+                    <!-- /Thumbnail -->
+
+                    <!-- content -->
+                    <div class="row post col-md-12" *ngIf="showFieldState !== 'editPost' && showFieldState !== 'deletePost' && selectedPost.title !== 'blog' && showFieldState !== 'addPost'" >
+                      <div class="postContent">
+                        
+                        <h2 class="contentTitle">{{selectedPost.title}}</h2>
+                        <img src="{{selectedPost.image}}"/>
+                        <br>
+                        <cite>By <b>{{selectedPost.author}}</b> on {{selectedPost.createDate | date}}. Category: {{selectedPost.category | uppercase}}</cite>
+                        <div class="post-body">
+                            <!-- <p *ngFor="let paragraph of selectedPost.body"> -->
+                                <!-- {{paragraph}} -->
+                              <p>
+                                <ngx-md>
+                                    {{ selectedPost.body }}
+                                </ngx-md>
+                              </p>
+                            <!-- </p> -->
+                        </div>
+                        <i #contentHeartElement class="fa fa-heart contentHeart fa-2x" (click)="addLike()"> {{selectedPost.likes}}</i>
+                        
+                        <div class="comments" ng-controller="CommentController as commentCtrl">
+                          <!-- <span class="fa fa-heart likeBtn" ng-click="post.likes = post.likes+1"> {{selectedPost.likes}}</span>
+                          <h3>Comments</h3>
+                          <ul>
+                           <li *ngFor="let comment of selectedPost.comments | async">
+                             <cite><b>{{comment.author}}</b>: </cite>
+                             "{{comment.body}}"
+                           </li>
+                          </ul> -->
+                          <!-- <form name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
+                            <h4>Add Comment</h4>
+                              <textarea ng-model="commentCtrl.comment.body" cols="30" rows="10" required></textarea>
+                            <label for="">by:</label>
+                              <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name"/>
+                              
+                              <input type="submit" class="btn btn-warning" value="Submit" />
+                          </form> -->
+                          <app-ad-listing *ngIf="selectedPost.title !== 'blog'" [selectedPost]="selectedPost" [showFieldState]="showFieldState"></app-ad-listing>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /content -->
+                      
+
+
+
+
+                    
+
+
+                        
+                    </div>
+                </div>
+              </div>
+    
+    
+    
+              
+    
+          </div>
+    </div>
+
+    <script src="./javascripts/bootstrap.js"></script>
+    
+
+
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+
+
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+
+ 
+
+
+
+
+  <!-- <script src="./javascripts/app.js"></script> -->
+  <!-- <script src="./javascripts/blogApp.js"></script> -->
+<!-- 
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  <li *ngFor="let post of posts | async">
+    <h3>{{post.title}}</h3>
+    <cite>{{post.createDate | date}}</cite>
+    <p class="fa fa-comment push-left"> {{post.commentCount}}
+    </p>
+    <p class="fa fa-heart push-right"> {{post.likes}}
+    </p>
   </li>
 </ul>
+<h3>hello</h3> -->
 
+</body>
+</html>
 <router-outlet></router-outlet>

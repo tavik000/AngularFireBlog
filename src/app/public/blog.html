@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html ng-app="blogApp">
+<head>
+  <title>Key Blog</title>
+  <link rel="stylesheet" href="./stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="./stylesheets/blogStyle.css">
+  <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/110131/responsive.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+
+
+
+</head>
+<body>
+    <div id="waddleDee" class="waddle-dee">
+      <div class="parasol">
+        <div class="parasol-top">
+          <div class="parasol-top-material"></div>
+          <div class="parasol-top-footer">
+            <div class="parasol-top-footer-left"></div>
+            <div class="parasol-top-footer-center"></div>
+            <div class="parasol-top-footer-right"></div>
+          </div>
+        </div>
+        <div class="parasol-stick"></div>
+      </div>
+      <div class="waddle-arm waddle-arm-left"></div>
+      <div class="waddle-arm waddle-arm-right"></div>
+      <div class="waddle-body">
+        <div class="waddle-face">
+          <div class="waddle-blush waddle-blush-left"></div>
+          <div class="waddle-blush waddle-blush-right"></div>
+          <div class="waddle-eye waddle-eye-left"></div>
+          <div class="waddle-eye waddle-eye-right"></div>
+        </div>
+      </div>
+      <div class="waddle-foot waddle-foot-left"></div>
+      <div class="waddle-foot waddle-foot-right"></div>
+    </div>
+
+    <div class="cloud cloud-large cloud-1"></div>
+    <div class="cloud cloud-medium cloud-2">
+      <div class="waddle-dee-the-second">
+        <div class="sign">
+          scroll
+        </div>
+        <div class="waddle-arm waddle-arm-left"></div>
+        <div class="waddle-arm waddle-arm-right"></div>
+        <div class="waddle-body">
+          <div class="waddle-face">
+            <div class="waddle-blush waddle-blush-left"></div>
+            <div class="waddle-blush waddle-blush-right"></div>
+            <div class="waddle-eye waddle-eye-left"></div>
+            <div class="waddle-eye waddle-eye-right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-medium cloud-4"></div>
+    <div class="cloud cloud-large cloud-5"></div>
+    <div class="cloud cloud-medium cloud-6"></div>
+    <div class="cloud cloud-7"></div>
+    <div class="cloud cloud-large cloud-8"></div>
+    <div class="cloud cloud-9"></div>
+
+    <div class="star-block star-block-1"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-2"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-3"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-4"><div class="star-block-star"></div></div>
+    <div class="star-block star-block-5"><div class="star-block-star"></div></div>
+
+    <div id="ground" class="ground">
+      <div class="ground-grass">
+        <div>
+                    
+          <div ng-controller="BlogController as blog">
+              <div class="topbar">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-s-4">
+                      <h1 class="push-left">{{blog.title}}</h1>
+                      
+                    </div>
+                    <div class="offset-s-4 col-s-4">
+                      <nav role='navigation' class="push-right">
+                        <ul>
+                          <!-- <li><a href="#" ng-click="blog.selectTab('blog')">See All Posts</a></li> //
+                          <li><a href="#" ng-click="blog.selectTab('new')">Add New Post</a></li> -->
+                        </ul>
+                      </nav> 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <div class="col-md-12">
+
+
+                            <div class="dropdown">
+                              <button class="dropbtn" ng-click="blog.selectTab('blog')">All</button>
+                            </div>
+
+                            <div class="dropdown">
+                              <button class="dropbtn">Study</button>
+                              <div class="dropdown-content">
+                                <a href="#">Web</a>
+                                <a href="#">Game</a>
+                                <a href="#">Mobile</a>
+                                <a href="#">English</a>
+                                <a href="#">Japanese</a>
+                              </div>
+                            </div>
+
+                            <div class="dropdown">
+                              <button class="dropbtn">Travel</button>
+                            </div>
+
+                            <div class="dropdown">
+                              <button class="dropbtn">Hobby</button>
+                              <div class="dropdown-content">
+                                <a href="#">Guitar</a>
+                                <a href="#">Skating</a>
+                                <a href="#">Movie</a>
+                                <a href="#">Food</a>
+                              </div>
+                            </div>
+                            <div class="dropdown">
+                              <button class="dropbtn">Daily</button>
+                            </div>
+                            <div class="dropdown">
+                              <button class="dropbtn">Home Page</button>
+                            </div>
+
+                    </div>
+                  </div>
+                
+                
+                 
+              </div>
+             
+              <br><br>
+
+              <div class="content">
+                <div class="container">
+                  <div class="row">
+                    <ul class="post-grid col-md-12" ng-show="blog.isSelected('blog')"  ng-repeat="post in blog.posts" ng-class="{ 'reset-s' : $index%3==0 }" ng-click="blog.selectTab($index)" >
+                      <li>
+                          <h3>{{post.title}}</h3>
+                          <cite>{{post.createDate | date}}</cite>
+                          <p>{{post.body[0] | limitTo:140}}...</p>
+                        <p class="fa fa-comment push-left"> {{post.commentCount}}
+                        </p>
+                        <p class="fa fa-heart push-right"> {{post.likes}}
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+
+
+                <div class="post" ng-repeat="post in blog.posts" ng-show="blog.isSelected($index)">
+                  <div>
+                    
+                    <h2>{{post.title}}</h2>
+                    <img src="{{post.image}}" ng-show="{{post.image}}"/>
+                    <cite>by {{post.author}} on {{post.createDate | date}}</cite>
+                    <div class="post-body">
+                     <p>{{post.body}}</p>
+                    </div>
+                    
+                    <div class="comments" ng-controller="CommentController as commentCtrl">
+                      <span class="fa fa-heart likeBtn" ng-click="post.likes = post.likes+1"> {{post.likes}}</span>
+                      <h3>Comments</h3>
+                      <ul>
+                       <li ng-repeat="comment in post.comments">
+                         <cite><b>{{comment.author}}</b>: </cite>
+                         "{{comment.body}}"
+                       </li>
+                      </ul>
+                      <form name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
+                      
+                        
+                        <h4>Add Comment</h4>
+                          <textarea ng-model="commentCtrl.comment.body" cols="30" rows="10" required></textarea>
+                        <label for="">by:</label>
+                          <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name"/>
+                          
+                          <input type="submit" class="btn btn-warning" value="Submit" />
+                        </form>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="post" ng-show="blog.isSelected('new')">
+                  <h2>Add New Post</h2>
+                  
+                  <form name="postForm" ng-submit=" blog.addPost()" novalidate>
+                          <h4>Title</h4>
+                          <input type="text" ng-model="blog.post.title"/>
+                          <h4>Body</h4>
+                          <textarea ng-model="blog.post.body" ng-list="/\n/" rows="10"></textarea>
+                          <label for="">Featured Image URL</label>
+                          <input type="text" ng-model="blog.post.image" placeholder="http://placekitten.com/g/2000/600" />
+                          <label for="">by:</label>
+                          <input type="text" ng-model="blog.post.author" placeholder="Author Name" required/>
+                          
+                          <input type="submit" value="Submit" />
+                        </select></form>
+                  
+                </div> -->
+                    
+                </div>
+                
+            </div>
+          </div>
+
+
+
+          
+
+        </div>
+      </div>
+    </div>
+    <script src="./javascripts/bootstrap.js"></script>
+    
+
+
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+
+
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+
+ 
+
+  <script type="text/javascript">
+      // Initialize Firebase
+         
+
+       
+          // app.controller('BlogController', function ($scope, $firebaseObject) {
+          //  var blog = this;
+          //   $scope.blog.title = "d Blog";
+   
+
+          // var postId = 'uXPuDgO0wwgs3Em4ppXE';
+          // var starCountRef = firebase.database().ref('posts/' + postId + '/likes');
+          // starCountRef.on('value', function(snapshot) {
+          //   updateStarCount(postElement, snapshot.val());
+
+
+          // });
+
+          //   })
+
+
+       var config = {
+            apiKey: "AIzaSyA0T_kXlQGGQlYtfVWEB2oqlqA3-DjlQEw",
+            authDomain: "blog-c5014.firebaseapp.com",
+            databaseURL: "https://blog-c5014.firebaseio.com",
+            projectId: "blog-c5014",
+            storageBucket: "blog-c5014.appspot.com",
+            messagingSenderId: "694626532753"
+          };
+          firebase.initializeApp(config);
+
+          // console.log(123)
+
+
+          // var app = angular.module("blogApp", ["firebase"]);
+          // app.controller("BlogController", function($scope, $firebaseObject) {
+          //   var ref = firebase.database().ref().child("data");
+          //   // download the data into a local object
+          //   var syncObject = $firebaseObject(ref);
+          //   // synchronize the object with a three-way data binding
+          //   // click on `index.html` above to see it used in the DOM!
+          //   syncObject.$bindTo($scope, "data");
+          // });
+
+
+          // document.getElementById("key").innerHTML= 'sdfsdf'; 
+
+
+          // // Initialize the default app
+          // var defaultApp = firebase.initializeApp(config);
+          // document.getElementById("key").innerHTML= defaultApp.name; 
+
+
+          // console.log(defaultApp.name);  // "[DEFAULT]"
+
+          // // You can retrieve services via the defaultApp variable...
+          // var defaultStorage = defaultApp.storage();
+          // var defaultDatabase = defaultApp.database();
+
+          // // ... or you can use the equivalent shorthand notation
+          // defaultStorage = firebase.storage();
+          // defaultDatabase = firebase.database();
+
+
+          // var dbapp = database.app;
+
+          // console.log("hello test")
+
+
+
+          
+  </script>
+
+
+
+
+  <script src="./javascripts/app.js"></script>
+  <script src="./javascripts/blogApp.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+  
+<div class="comments" ng-controller="CommentController as commentCtrl">
+          <!-- <span class="fa fa-heart likeBtn" ng-click="post.likes = post.likes+1"> {{selectedPost.likes}}</span> -->
+
+<!-- Contenedor Principal -->
+	<div *ngIf="selectedPost.commentCount > 0"  class="comments-container">
+		<h1>Comments</h1>
+
+		<ul id="comments-list" class="comments-list">
+			<li *ngFor="let cmt of cmt$ | async">
+				<div class="comment-main-level">
+					<!-- Avatar -->
+					<div class="comment-avatar"><img src="https://firebasestorage.googleapis.com/v0/b/blog-c5014.appspot.com/o/waddleIcon.png?alt=media&token=23b7778b-c81e-4bec-8daf-131aabdab56f" alt=""></div>
+					<!-- Contenedor del Comentario -->
+					<div class="comment-box">
+						<div class="comment-head">
+							<h6 class="comment-name by-author"><a href="javascript:void(0)">{{cmt.name}}</a></h6>
+							<!-- <span>hace 20 minutos</span> -->
+							<!-- <i class="fa fa-reply"></i> -->
+							<!-- <i class="fa fa-heart"></i> -->
+						</div>
+						<div class="comment-content">
+                {{cmt.comment}}
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+  </div>
+  <ng-template #loading>No comment&hellip;</ng-template>
+  
+  <h2>Add Comment</h2>
+  <textarea [(ngModel)]="comment" cols="30" rows="10" required placeholder="Comment here..."></textarea>
+  <label>by:</label>
+  <input type="text" [(ngModel)]="name" required placeholder="Name"/>
+  <button class="dropbtn addCommentBtn green" (click)="addCmt()">Add Comment</button>
+
+
+
+
+
+
+
+
+
+
+            
+</div>
+
