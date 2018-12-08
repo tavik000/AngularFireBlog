@@ -4,6 +4,9 @@
 </p> 
 
 
+[![License](https://img.shields.io/npm/l/@angular/cli.svg)](/LICENSE) 
+
+
 
 ### Keyword
 > `Angular` `Firebase` `FIrestore` `Personal Blog System` `NoSQL` `TypeScript` `AngularFire2`
