@@ -21,6 +21,8 @@
 * [System Structure](#system-structure)
 * [Author](#author)
 * [Function](#function)
+* [Database](#database)
+* [Framework](#framework)
 * [Screenshots](#screenshots)
 * [Contact](#contact)
 * [License](#license)
@@ -34,6 +36,11 @@
 
 -----
 <br>
+<br>
+<br>
+
+Check my blog here: <b>[Key blog](https://blog-c5014.firebaseapp.com)</b>
+
 <br>
 <br>
 
@@ -99,7 +106,12 @@ $ npm install -g @angular/cli
 
 ### 4. Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+$ ng serve --open
+```
+
+The app will automatically reload if you change any of the source files. You can view the web using this command.
+
 
 ### 5. Download Firebase-tools (Optional for connect your own firebase app)
 
@@ -113,6 +125,7 @@ $ npm install -g firebase-tools
 ```bash
 $ ng build -prod
 ```
+This command can used to build your project into a single view web app. It complile all TypeScript file in to JavaScript as well as css integrating. So the index.html in the /dist folder contain your whole program.
 
 #### Login your Firebase Account
 
@@ -218,6 +231,52 @@ Under the comments, there is a “Add comment” field. Users can make comments 
 
 ### Add likes
 Under the post, there are many comments of the post. And there is a “like” button. Other users can like the post even they don’t log in our blog system. When user clicks the like button, the likes count will add one and the heart icon will turn red. Besides, users can not press like button again.
+
+
+## Database
+In the blog system, we make use of Firestore provided by Firebase, Google. Firestore is a NoSQL database. We use NoSQL database because it is flexible and useful. We will not storing business critical data or financial data to the database. so RDBMS is not suitable to the blog system. The system does not require ACID. 
+
+Firestore is a cloud database meaning that we can connect to the database everywhere everytime without downloading database software such as mySQL, mongoDB and we do not need to create our own database in our computer and turn on the database server. Firestore is a document based database. All data are got in JSON format. and they are key-value pair.
+
+In Firestore database, there is a collection, and the collection can have many documents. Each document can contain lots of files. Every file has a list of “key-value” pair of data.
+
+In our project, we have different users. And each user has one “Post” collection. Inside “Post” collection, there are many “post” documents. Each “post” has “title”, “author”, “body”, “category”, “createDate”, “likes”, “commentCount”, “image” and “comments”. and our comments is subcollection related to the post document. each post has it’s own comments subcollection.
+<br>
+![image](./ScreenShot/db1.png) <br>
+![image](./ScreenShot/db2.png) <br>
+![image](./ScreenShot/db3.png) <br>
+
+It should be noted that we have deployed our blog system to cloud hosting thanks to the hosting function provided by powerful Firebase
+
+
+![image](./ScreenShot/db4.png) <br>
+![image](./ScreenShot/db5.png) <br>
+![image](./ScreenShot/db6.png) <br>
+
+
+## Framework
+
+- Programming languages: HTML, CSS, JavaScript, TypeScript
+
+- Framework: Bootstrap, AngularFire(Angular + Firebase)
+
+
+<br>
+#### Angular6 + Firebase
+We use Angular6 + Firebase in this project. There are many components in the website, for example, app component, login component, editor component and other components. Different components contain three main files: HTML, CSS and ts.
+In HTML, we write the HTML code of the website. In CSS, we write the CSS code. And in ts, we write the data manipulation code here. 
+
+The biggest advantage of Angular and Firebase is that we can bind the data between front-end and cloud database together using TypeScript. In the front-end we can display the data in cloud database easily and in the back-end we can get the data from the webpage once the data input has changed.
+
+With Angular6 + Firebase framework, we can better implement our blog system in MVC architecture. Using the component in Angular, we can develop the layout of our blog system in the component.html and component.css. We can define and specify our data manipulation functions within the component.ts. Also, we can manage our data in the Cloud Firestore database.
+
+We store all the blog posts data in the Cloud Firestore database. It is NoSQL database and it provides real-time data manipulation, which helps us process flexible data more easily.
+
+We can design a comprehensive web app thanks to Angular. A popular feature of Angular is the single view app design making it possible to display different content without reloading the page. The most frequency for single web design is making use of ‘*ngIf ‘ function provided by Angular Cli
+
+Angular cli support TypeScript with is a strong language compare to weak language JavaScript. The variable should be assigned a data type in TypeScript. And in TypeScript, we can use import {} from ‘’ so that we can use many different functions provided by others. TypeScript is stricter than the ‘use strict’ mode of JavaScript making debugging easier. And developers can follow the standard of TypeScript coding and the coding could be more readable than JavaScript.
+
+
 
 
 ## Screenshots
