@@ -255,7 +255,9 @@
                                 [attr.data-index]="i">
                                         <div class="img-caption" [@popOverState]="states[i]">
                                             <a href="javascript:void(0)" class="edit" (click)="sendDefaultValue(post)" (click)="onSelect(post)" (click)="onShowFieldState('editPost')"><i class="fas fa-pen fa-2x"></i></a>
-                                            <a href="javascript:void(0)" class="delete" (click)="onShowFieldState('deletePost')" (click)="onSelect(post)" (click)="deletePost()"><i class="fas fa-trash-alt fa-2x"></i></a>
+                                            <a href="javascript:void(0)" class="delete" (click)="onShowFieldState('deletePost')" (click)="onSelect(post)" (click)="openModal()"><i class="fas fa-trash-alt fa-2x"></i></a>
+                                            
+                                            
                                         </div>
                                         <li *ngIf="states[i] !== 'show'"  (click)="onSelect(post)">
                                             <h3>{{post.title}}</h3>
@@ -277,6 +279,13 @@
                         </div>
                     </div>
                     <!-- /Thumbnail -->
+
+                    <!-- deleteConfirm -->
+                    <app-modal class="app-model-display">
+                        <h1 class="deleteTitle">Delete the Post "{{selectedPost.title}}"?</h1>
+                        <button class="deleteButton" (click)="deletePost();" (click)="closeModal();">Delete</button>
+                        <button class="closeButton" (click)="onShowFieldState('')" (click)="onSelect(defaultHomepagePostRef)" (click)="closeModal();">Close</button>
+                    </app-modal>
 
                     <!-- content -->
                     <div class="row post col-md-12" *ngIf="showFieldState !== 'editPost' && showFieldState !== 'deletePost' && selectedPost.title !== 'blog' && showFieldState !== 'addPost'" >
@@ -340,6 +349,7 @@
           </div>
     </div>
 
+                    
     <script src="./javascripts/bootstrap.js"></script>
     
 

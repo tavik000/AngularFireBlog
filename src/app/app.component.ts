@@ -2,15 +2,18 @@ import { Post } from './app.component';
 import { Component, ViewChild, ElementRef, Inject, AfterViewInit, OnInit, } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection} from '@angular/fire/firestore';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { DOCUMENT } from '@angular/common'; 
+// import { DOCUMENT } from '@angular/common'; 
 import { switchMap } from 'rxjs/operators';
-import { defineBase } from '@angular/core/src/render3';
+// import { defineBase } from '@angular/core/src/render3';
 import { EditorConfig } from './editor/model/editor-config';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { trigger, state, style, animate, transition} from '@angular/animations';
 import { map } from 'rxjs/operators';
 import { formatDate } from '@angular/common';
-import { CommentComponent } from './ad-listing/ad-listing.component'
+// import { CommentComponent } from './ad-listing/ad-listing.component'
+
+import { ModalComponent } from './modal/modal.component';
+
 
 declare var $:any;
 
@@ -29,19 +32,6 @@ export interface Post{
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  // template: `
-  //   <ul>
-  //     <li *ngFor="let post of posts | async">
-  //       <h3>{{post.title}}</h3>
-  //       <cite>{{post.createDate | date}}</cite>
-  //       <p class="fa fa-comment push-left"> {{post.commentCount}}
-  //       </p>
-  //       <p class="fa fa-heart push-right"> {{post.likes}}
-  //       </p>
-  //     </li>
-  //   </ul>
-  //   <h3>hello</h3>
-  // `,
   styleUrls: [
     './public/stylesheets/bootstrap.css',
     './public/stylesheets/style.css',
@@ -95,7 +85,7 @@ export class AppComponent {
       if (pos > 5699) {  
         if (!dee.classList.contains('is-sitting')) {
           dee.classList.add('is-sitting');
-          dee.style.top = pos + dee.getBoundingClientRect().height + offset * 2 + 'px';
+          dee.style.top = 5699 + dee.getBoundingClientRect().height + offset * 2 + 'px';
         }
       } else {
         dee.classList.remove('is-sitting');
@@ -104,8 +94,8 @@ export class AppComponent {
     }
   }
 
-
-
+  @ViewChild(ModalComponent) modalComponent:ModalComponent;
+  // private modalComponent: ModalComponent;
   private postsCollection: AngularFirestoreCollection<Post>;
   posts: Observable<Post[]>;
   cat$: BehaviorSubject<string|null>;
@@ -194,7 +184,11 @@ export class AppComponent {
   }
 
 
-  constructor(private afs: AngularFirestore) {
+  // For the confirmation pop up window
+  
+  constructor(
+    private afs: AngularFirestore
+    ) {
 
     this.AFS = afs;
     // this.catFilter$ = new BehaviorSubject(null);
@@ -476,6 +470,14 @@ export class AppComponent {
     });
   }
   
+
+  openModal() {
+    this.modalComponent.open();
+  }
+
+  closeModal() {
+    this.modalComponent.close();
+  }
 
 
 }

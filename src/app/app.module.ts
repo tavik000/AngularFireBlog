@@ -17,6 +17,7 @@ import { NgxMdModule } from 'ngx-md';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -35,7 +36,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  declarations: [ AppComponent, LoginComponent, CommentComponent, EditorMdDirective ],
+  declarations: [ 
+    AppComponent,
+    LoginComponent,
+    CommentComponent,
+    EditorMdDirective,
+    ModalComponent
+  ],
   bootstrap: [ AppComponent ],
 })
 
