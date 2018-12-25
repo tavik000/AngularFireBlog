@@ -90,9 +90,9 @@ export class AppComponent {
     window.addEventListener('scroll', handleScroll);
 
     function handleScroll() {
-      var pos = window.pageYOffset;
-
-      if (pos > groundPos - deeBottom + offset) {
+      var pos:number = window.pageYOffset;
+      // if (pos > groundPos - deeBottom + offset) {
+      if (pos > 5699) {  
         if (!dee.classList.contains('is-sitting')) {
           dee.classList.add('is-sitting');
           dee.style.top = pos + dee.getBoundingClientRect().height + offset * 2 + 'px';
@@ -102,10 +102,7 @@ export class AppComponent {
         dee.style.top = null;
       }
     }
-
-
   }
-
 
 
 
