@@ -80,12 +80,24 @@ export class AppComponent {
     window.addEventListener('scroll', handleScroll);
 
     function handleScroll() {
+      deeBottom = dee.getBoundingClientRect().height + dee.getBoundingClientRect().top;
+      groundPos = ground.getBoundingClientRect().top + window.pageYOffset;
+      console.log("window.pageYOffset: ",window.pageYOffset);
+      console.log("groundPos: ",groundPos);
+      console.log("deeBottom: ",deeBottom);
+      console.log("dee.getBoundingClientRect().height: ",dee.getBoundingClientRect().height);
+      console.log("dee.getBoundingClientRect().top: ",dee.getBoundingClientRect().top);
+      // console.log("ground.getBoundingClientRect().top: ",ground.getBoundingClientRect().top);
+      // console.log("window.pageYOffset: ",window.pageYOffset);
+
+
       var pos:number = window.pageYOffset;
       // if (pos > groundPos - deeBottom + offset) {
-      if (pos > 5699) {  
+      if (pos > groundPos - 364 + offset) {
+      // if (pos > 5699) {  
         if (!dee.classList.contains('is-sitting')) {
           dee.classList.add('is-sitting');
-          dee.style.top = 5699 + dee.getBoundingClientRect().height + offset * 2 + 'px';
+          dee.style.top = groundPos - deeBottom + offset + dee.getBoundingClientRect().height + offset * 2 + 'px';
         }
       } else {
         dee.classList.remove('is-sitting');
