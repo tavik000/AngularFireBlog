@@ -82,11 +82,11 @@ export class AppComponent {
     function handleScroll() {
       deeBottom = dee.getBoundingClientRect().height + dee.getBoundingClientRect().top;
       groundPos = ground.getBoundingClientRect().top + window.pageYOffset;
-      console.log("window.pageYOffset: ",window.pageYOffset);
-      console.log("groundPos: ",groundPos);
-      console.log("deeBottom: ",deeBottom);
-      console.log("dee.getBoundingClientRect().height: ",dee.getBoundingClientRect().height);
-      console.log("dee.getBoundingClientRect().top: ",dee.getBoundingClientRect().top);
+      // console.log("window.pageYOffset: ",window.pageYOffset);
+      // console.log("groundPos: ",groundPos);
+      // console.log("deeBottom: ",deeBottom);
+      // console.log("dee.getBoundingClientRect().height: ",dee.getBoundingClientRect().height);
+      // console.log("dee.getBoundingClientRect().top: ",dee.getBoundingClientRect().top);
       // console.log("ground.getBoundingClientRect().top: ",ground.getBoundingClientRect().top);
       // console.log("window.pageYOffset: ",window.pageYOffset);
 
